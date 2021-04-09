@@ -73,8 +73,6 @@ describe("Create Statement", () => {
       description: "Test",
     });
 
-    console.log(statement);
-
     expect(statement).toHaveProperty("id");
   });
 });
