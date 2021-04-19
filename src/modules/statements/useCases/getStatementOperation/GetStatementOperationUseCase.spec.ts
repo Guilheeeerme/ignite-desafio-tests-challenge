@@ -31,7 +31,7 @@ describe("Create Statement", () => {
         user_id,
         statement_id,
       });
-    }).rejects.toBeInstanceOf(GetStatementOperationError.UserNotFound);
+    }).rejects.toEqual(new GetStatementOperationError.UserNotFound());
   });
 
   it("should not be able to find one statement", async () => {

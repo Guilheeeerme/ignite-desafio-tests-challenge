@@ -32,7 +32,7 @@ describe("Create Statement", () => {
         amount: 100,
         description: "Test",
       });
-    }).rejects.toBeInstanceOf(CreateStatementError.UserNotFound);
+    }).rejects.toEqual(new CreateStatementError.UserNotFound());
   });
 
   it("should not be able to withdraw if the balance is insufficient", async () => {
@@ -56,7 +56,7 @@ describe("Create Statement", () => {
         amount: 1001,
         description: "Test",
       })
-    ).rejects.toBeInstanceOf(CreateStatementError.InsufficientFunds);
+    ).rejects.toEqual(new CreateStatementError.InsufficientFunds());
   });
 
   it("should be able to create a new statement", async () => {

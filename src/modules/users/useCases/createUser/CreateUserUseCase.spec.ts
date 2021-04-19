@@ -33,6 +33,6 @@ describe("Create User", () => {
         email: user.email,
         password: user.password,
       });
-    }).rejects.toBeInstanceOf(CreateUserError);
+    }).rejects.toEqual(new CreateUserError());
   });
 });

@@ -21,7 +21,7 @@ describe("Get balance", () => {
     expect(async () => {
       const user_id = "nonexistent";
       await getBalanceUseCase.execute({ user_id });
-    }).rejects.toBeInstanceOf(GetBalanceError);
+    }).rejects.toEqual(new GetBalanceError());
   });
 
   it("should be able to show balance an user", async () => {

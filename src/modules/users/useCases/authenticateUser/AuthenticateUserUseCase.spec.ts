@@ -37,7 +37,7 @@ describe("Authenticate User", () => {
         email: "nonexistent@email.com.br",
         password: "1234",
       });
-    }).rejects.toBeInstanceOf(IncorrectEmailOrPasswordError);
+    }).rejects.toEqual(new IncorrectEmailOrPasswordError());
   });
 
   it("should be not to authenticate with incorrect password", () => {
@@ -52,6 +52,6 @@ describe("Authenticate User", () => {
         email: user.email,
         password: "incorrectPassword",
       });
-    }).rejects.toBeInstanceOf(IncorrectEmailOrPasswordError);
+    }).rejects.toEqual(new IncorrectEmailOrPasswordError());
   });
 });
