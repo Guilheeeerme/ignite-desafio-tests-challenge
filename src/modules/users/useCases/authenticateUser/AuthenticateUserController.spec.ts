@@ -8,7 +8,7 @@ import { app } from "../../../../app";
 
 let connection: Connection;
 
-describe("Authenticate User", () => {
+describe("AuthenticateUserController", () => {
   beforeAll(async () => {
     connection = await createConnection();
     await connection.runMigrations();
