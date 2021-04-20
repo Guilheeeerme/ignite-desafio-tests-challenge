@@ -8,7 +8,7 @@ import { app } from "../../../../app";
 
 let connection: Connection;
 
-describe("Authenticate User", () => {
+describe("ShowUserProfileController", () => {
   beforeAll(async () => {
     connection = await createConnection();
     await connection.runMigrations();
@@ -37,7 +37,7 @@ describe("Authenticate User", () => {
 
     const response = await request(app)
       .get("/api/v1/profile")
-      .set({ authorization: `Bearer ${token}` });
+      .set({ Authorization: `Bearer ${token}` });
 
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("id");
