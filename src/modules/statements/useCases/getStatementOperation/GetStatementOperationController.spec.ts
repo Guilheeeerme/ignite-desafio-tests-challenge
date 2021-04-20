@@ -7,7 +7,7 @@ import { app } from "../../../../app";
 
 let connection: Connection;
 
-describe("GetStatementController", () => {
+describe("GetStatementOperationController", () => {
   beforeAll(async () => {
     connection = await createConnection();
     await connection.runMigrations();
